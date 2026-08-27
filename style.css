@@ -25,6 +25,19 @@ h1 em { color: var(--rose); }
 .gallery { padding: 110px 7vw; }
 .gallery-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin: 0 5vw; }
 .gallery-heading h2 { font-size: clamp(2.5rem, 4.3vw, 4.7rem); margin: 0; max-width: 560px; }
+.moments { background: #e7dbce; padding: 110px 7vw; }
+.moments-intro { max-width: 640px; margin: 0 auto 70px; text-align: center; }
+.moments-intro h2 { font-size: clamp(2.5rem, 4.3vw, 4.2rem); margin: 15px 0 24px; }
+.moments-intro p:not(.eyebrow) { line-height: 1.8; color: #574d47; }
+.moment-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1100px; margin: 0 auto; }
+.moment-list article { border-top: 1px solid rgba(39, 33, 31, .18); padding-top: 22px; }
+.moment-list span { font-family: Georgia, "Times New Roman", serif; font-size: 2.4rem; color: var(--rose); }
+.moment-list h3 { font-family: Georgia, "Times New Roman", serif; font-weight: normal; font-size: 1.5rem; margin: 10px 0 14px; }
+.moment-list p { line-height: 1.7; color: #574d47; }
+.process { display: grid; grid-template-columns: minmax(140px, 260px) minmax(280px, 640px); gap: clamp(30px, 6vw, 100px); align-items: start; padding: 110px 12vw; }
+.process-number { font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.6rem, 5vw, 4.4rem); color: var(--sage); }
+.process-copy h2 { font-size: clamp(2.5rem, 4vw, 4.2rem); margin: 15px 0 24px; }
+.process-copy p { line-height: 1.8; max-width: 560px; }
 .contact { background: var(--sage); color: var(--paper); padding: 100px 12vw; display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: end; }
 .contact .eyebrow { color: #dce1d4; }
 .contact h2 { font-size: clamp(3.2rem, 5vw, 5.8rem); margin: 18px 0 0; }
@@ -35,4 +48,4 @@ h1 em { color: var(--rose); }
 .contact-details strong { font-family: Georgia, "Times New Roman", serif; font-size: 1.35rem; font-weight: normal; }
 footer { background: var(--ink); color: #f7f2ea; padding: 30px 7vw; text-align: center; font-family: Georgia, "Times New Roman", serif; font-size: 1.15rem; }
 footer span { color: var(--rose); padding: 0 .4rem; }
-@media (max-width: 720px) { .hero { min-height: auto; } .hero-copy { margin: 90px 0 60px; } .about, .contact { grid-template-columns: 1fr; padding: 70px 8vw; } .gallery { padding: 70px 8vw; } .gallery-heading { display: block; margin: 0; } .gallery-heading .eyebrow { margin-bottom: 15px; } .contact { gap: 48px; } }
+@media (max-width: 720px) { .hero { min-height: auto; } .hero-copy { margin: 90px 0 60px; } .about, .contact, .process { grid-template-columns: 1fr; padding: 70px 8vw; } .gallery { padding: 70px 8vw; } .gallery-heading { display: block; margin: 0; } .gallery-heading .eyebrow { margin-bottom: 15px; } .contact { gap: 48px; } .moments { padding: 70px 8vw; } .moments-intro { margin-bottom: 45px; } .moment-list { grid-template-columns: 1fr; gap: 32px; } .process { gap: 20px; } }
