@@ -24,8 +24,9 @@ h1 em { color: var(--rose); }
 .about-copy p:not(.eyebrow) { line-height: 1.8; max-width: 570px; }
 .gallery { padding: 110px 7vw; }
 .gallery-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin: 0 5vw; }
-.gallery-heading .eyebrow { font-size: .78rem; margin-bottom: 16px; }
-.gallery-heading .gallery-note { color: #574d47; }
+.gallery-heading .eyebrow { display: flex; align-items: center; gap: 12px; font-size: .95rem; color: var(--rose); letter-spacing: .22em; margin-bottom: 18px; }
+.gallery-heading .eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--rose); }
+.gallery-heading .gallery-note { color: #8a8078; font-size: .95rem; }
 .gallery-heading h2 { font-size: clamp(2.5rem, 4.3vw, 4.7rem); margin: 0; max-width: 560px; }
 .moments { background: #e7dbce; padding: 110px 7vw; }
 .moments-intro { max-width: 640px; margin: 0 auto 70px; text-align: center; }
