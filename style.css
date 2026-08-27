@@ -65,4 +65,27 @@ footer span { color: var(--rose); padding: 0 .4rem; }
 .catalog-item .photo { height: auto; aspect-ratio: 1 / 1; }
 .catalog-item h3 { font-family: Georgia, "Times New Roman", serif; font-weight: normal; font-size: 1.3rem; margin: 18px 0 6px; }
 .catalog-item p { color: #574d47; margin: 0; }
-@media (max-width: 720px) { .hero { min-height: auto; } .hero-copy { margin: 90px 0 60px; } .hero-slot { position: static; width: 100%; height: 330px; margin-top: 30px; } .about, .contact, .process { grid-template-columns: 1fr; padding: 70px 8vw; } .small-slot { height: 280px; } .gallery { padding: 70px 8vw; } .gallery-heading .eyebrow { font-size: 1.6rem; white-space: normal; gap: 12px; } .gallery-heading .eyebrow::before, .gallery-heading .eyebrow::after { width: 20px; } .gallery-grid { grid-template-columns: 1fr; margin-top: 40px; } .contact { gap: 48px; } .moments { padding: 70px 8vw; } .moments-intro { margin-bottom: 45px; } .moment-list { grid-template-columns: 1fr; gap: 32px; } .process { gap: 20px; } }
+@media (max-width: 720px) {
+  body { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+  .hero { min-height: auto; padding: max(20px, env(safe-area-inset-top)) 6vw 50px; }
+  footer { padding-bottom: max(30px, env(safe-area-inset-bottom)); }
+  .nav { font-size: .68rem; gap: 10px 16px; }
+  .hero-copy { margin: 60px 0 40px; }
+  h1 { font-size: clamp(2.6rem, 11vw, 7.2rem); margin: 14px 0 22px; }
+  .hero-slot { position: static; top: auto; transform: none; width: 100%; height: 280px; margin-top: 28px; }
+  .hero-buttons { margin-top: 4px; }
+  .about, .contact, .process { grid-template-columns: 1fr; padding: 60px 8vw; }
+  .small-slot { height: 260px; }
+  .gallery { padding: 60px 8vw; }
+  .gallery-heading .eyebrow { font-size: 1.6rem; white-space: normal; gap: 12px; }
+  .gallery-heading .eyebrow::before, .gallery-heading .eyebrow::after { width: 20px; }
+  .gallery-grid { grid-template-columns: 1fr; margin-top: 36px; }
+  .contact { gap: 40px; }
+  .moments { padding: 60px 8vw; }
+  .moments-intro { margin-bottom: 40px; }
+  .moment-list { grid-template-columns: 1fr; gap: 28px; }
+  .process { gap: 18px; }
+  .catalog-hero { padding: 20px 6vw 60px; }
+  .catalog-intro { margin-top: 60px; }
+  .catalog-grid { padding: 60px 8vw; gap: 28px; }
+}
