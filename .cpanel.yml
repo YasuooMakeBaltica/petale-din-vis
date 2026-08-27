@@ -1,0 +1,11 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/$USER/public_html/
+    - /bin/cp -R index.html "$DEPLOYPATH"
+    - /bin/cp -R catalog.html "$DEPLOYPATH"
+    - /bin/cp -R style.css "$DEPLOYPATH"
+    - /bin/cp -R buchet-albastru.jpg "$DEPLOYPATH"
+    - /bin/cp -R buchet-albastru-cutie.jpg "$DEPLOYPATH"
+    - /bin/cp -R buchet-roz-cutie.jpg "$DEPLOYPATH"
+    - /bin/cp -R buchet-rosu.jpg "$DEPLOYPATH"
