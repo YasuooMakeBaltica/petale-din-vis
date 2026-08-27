@@ -19,7 +19,10 @@ h1 { font-size: clamp(3.8rem, 8vw, 7.2rem); line-height: .98; margin: 18px 0 28p
 h1 em { color: var(--rose); }
 .intro { max-width: 440px; font-size: 1.08rem; line-height: 1.7; }
 .button { display: inline-block; background: var(--ink); color: white; margin-top: 20px; padding: 15px 24px; font-size: .8rem; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
-.about { background: #e7dbce; display: grid; gap: clamp(42px, 8vw, 130px); grid-template-columns: minmax(280px, 600px); justify-content: center; align-items: center; padding: 110px 12vw; }
+.photo { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
+.hero-slot { width: min(34vw, 480px); height: 540px; position: absolute; right: 7vw; top: 116px; }
+.about { background: #e7dbce; display: grid; gap: clamp(42px, 8vw, 130px); grid-template-columns: minmax(220px, 390px) minmax(280px, 600px); align-items: center; padding: 110px 12vw; }
+.small-slot { height: 360px; }
 .about-copy h2 { font-size: clamp(2.5rem, 4vw, 4.2rem); margin: 15px 0 24px; }
 .about-copy p:not(.eyebrow) { line-height: 1.8; max-width: 570px; }
 .gallery { padding: 110px 7vw; }
@@ -27,6 +30,9 @@ h1 em { color: var(--rose); }
 .gallery-heading .eyebrow { display: flex; align-items: center; justify-content: center; gap: 20px; font-size: clamp(2rem, 3.4vw, 3rem); font-family: Georgia, "Times New Roman", serif; font-weight: normal; color: var(--rose); letter-spacing: .04em; text-transform: none; margin-bottom: 22px; white-space: nowrap; }
 .gallery-heading .eyebrow::before, .gallery-heading .eyebrow::after { content: ""; width: 40px; height: 2px; background: var(--rose); }
 .gallery-heading .gallery-note { color: #8a8078; font-size: .95rem; }
+.gallery-grid { display: grid; grid-template-columns: 1.15fr 1fr; grid-template-rows: 440px; gap: 16px; max-width: 1100px; margin: 60px auto 0; }
+.gallery-tall { grid-row: span 1; }
+.gallery-wide { grid-row: span 1; }
 .moments { background: #e7dbce; padding: 110px 7vw; }
 .moments-intro { max-width: 640px; margin: 0 auto 70px; text-align: center; }
 .moments-intro h2 { font-size: clamp(2.5rem, 4.3vw, 4.2rem); margin: 15px 0 24px; }
@@ -50,4 +56,4 @@ h1 em { color: var(--rose); }
 .contact-details strong { font-family: Georgia, "Times New Roman", serif; font-size: 1.35rem; font-weight: normal; }
 footer { background: var(--ink); color: #f7f2ea; padding: 30px 7vw; text-align: center; font-family: Georgia, "Times New Roman", serif; font-size: 1.15rem; }
 footer span { color: var(--rose); padding: 0 .4rem; }
-@media (max-width: 720px) { .hero { min-height: auto; } .hero-copy { margin: 90px 0 60px; } .about, .contact, .process { grid-template-columns: 1fr; padding: 70px 8vw; } .gallery { padding: 70px 8vw; } .gallery-heading .eyebrow { font-size: 1.6rem; white-space: normal; gap: 12px; } .gallery-heading .eyebrow::before, .gallery-heading .eyebrow::after { width: 20px; } .contact { gap: 48px; } .moments { padding: 70px 8vw; } .moments-intro { margin-bottom: 45px; } .moment-list { grid-template-columns: 1fr; gap: 32px; } .process { gap: 20px; } }
+@media (max-width: 720px) { .hero { min-height: auto; } .hero-copy { margin: 90px 0 60px; } .hero-slot { position: static; width: 100%; height: 330px; margin-top: 30px; } .about, .contact, .process { grid-template-columns: 1fr; padding: 70px 8vw; } .small-slot { height: 280px; } .gallery { padding: 70px 8vw; } .gallery-heading .eyebrow { font-size: 1.6rem; white-space: normal; gap: 12px; } .gallery-heading .eyebrow::before, .gallery-heading .eyebrow::after { width: 20px; } .gallery-grid { grid-template-columns: 1fr; grid-template-rows: 260px 260px; margin-top: 40px; } .contact { gap: 48px; } .moments { padding: 70px 8vw; } .moments-intro { margin-bottom: 45px; } .moment-list { grid-template-columns: 1fr; gap: 32px; } .process { gap: 20px; } }
