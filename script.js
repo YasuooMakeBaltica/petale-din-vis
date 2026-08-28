@@ -10,10 +10,14 @@ var GOOGLE_CLIENT_ID = '1087975152740-btfk5kg2bd4bf8pvhumjedda9g5lu68v.apps.goog
   var themeBtn = document.getElementById('themeToggle');
   var themeLabel = themeBtn ? themeBtn.querySelector('.theme-toggle__label') : null;
   var loginBtn = document.getElementById('loginBtn');
+  var loginBtnLabel = loginBtn ? loginBtn.querySelector('.login-btn__label') : null;
   var loginModal = document.getElementById('loginModal');
   var loginClose = document.getElementById('loginModalClose');
   var googleBtn = document.getElementById('googleSignInBtn');
   var googleNote = document.getElementById('googleSignInNote');
+  var accountChip = document.getElementById('accountChip');
+  var accountAvatar = document.getElementById('accountAvatar');
+  var accountName = document.getElementById('accountName');
 
   function openMenu() {
     menu.classList.add('is-open');
@@ -86,10 +90,63 @@ var GOOGLE_CLIENT_ID = '1087975152740-btfk5kg2bd4bf8pvhumjedda9g5lu68v.apps.goog
     loginModal.setAttribute('aria-hidden', 'true');
   }
 
+  function getStoredAccount() {
+    try {
+      var raw = localStorage.getItem('account');
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function setStoredAccount(account) {
+    try {
+      if (account) {
+        localStorage.setItem('account', JSON.stringify(account));
+      } else {
+        localStorage.removeItem('account');
+      }
+    } catch (e) {}
+  }
+
+  function renderAccount(account) {
+    if (account) {
+      if (accountChip) {
+        accountChip.hidden = false;
+        if (accountAvatar) accountAvatar.src = account.picture || '';
+        if (accountName) accountName.textContent = account.name || account.email || '';
+      }
+      if (loginBtn) {
+        loginBtn.classList.add('is-authed');
+        if (loginBtnLabel) loginBtnLabel.textContent = 'Log out';
+      }
+    } else {
+      if (accountChip) accountChip.hidden = true;
+      if (loginBtn) {
+        loginBtn.classList.remove('is-authed');
+        if (loginBtnLabel) loginBtnLabel.textContent = 'Log in';
+      }
+    }
+  }
+
+  renderAccount(getStoredAccount());
+
+  function logout() {
+    setStoredAccount(null);
+    renderAccount(null);
+    if (window.google && window.google.accounts && window.google.accounts.id) {
+      try { window.google.accounts.id.disableAutoSelect(); } catch (e) {}
+    }
+  }
+
   if (loginBtn) {
     loginBtn.addEventListener('click', function () {
       closeMenu();
-      openLogin();
+      if (loginBtn.classList.contains('is-authed')) {
+        logout();
+      } else {
+        openLogin();
+      }
     });
   }
 
@@ -126,7 +183,11 @@ var GOOGLE_CLIENT_ID = '1087975152740-btfk5kg2bd4bf8pvhumjedda9g5lu68v.apps.goog
   function handleGoogleCredential(response) {
     try {
       var payload = JSON.parse(atob(response.credential.split('.')[1].replace(/-/g, '+').replace(/_/g, '/')));
+      var account = { name: payload.name, email: payload.email, picture: payload.picture };
+      setStoredAccount(account);
+      renderAccount(account);
       if (googleNote) googleNote.textContent = 'Bine ai venit, ' + (payload.name || payload.email) + '!';
+      setTimeout(closeLogin, 1200);
     } catch (e) {
       if (googleNote) googleNote.textContent = 'Autentificarea Google a eșuat. Încearcă din nou.';
     }

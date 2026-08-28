@@ -135,6 +135,14 @@ footer span { color: var(--rose); padding: 0 .4rem; }
 .login-btn { display: inline-flex; align-items: center; gap: 8px; background: transparent; border: 1px solid var(--ink); color: var(--ink); padding: 10px 18px; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; border-radius: 999px; transition: background-color .2s ease, color .2s ease, border-color .25s ease; }
 .login-btn:hover { background: var(--ink); color: var(--paper); }
 .login-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+.login-btn .icon-logout { display: none; }
+.login-btn.is-authed .icon-person { display: none; }
+.login-btn.is-authed .icon-logout { display: block; }
+
+.account-chip { display: flex; align-items: center; gap: 9px; padding: 4px 14px 4px 4px; border-radius: 999px; background: var(--surface); border: 1px solid var(--surface-border); }
+.account-chip[hidden] { display: none; }
+.account-chip__avatar { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; display: block; background: var(--bg-alt); }
+.account-chip__name { font-size: .78rem; font-weight: 600; color: var(--ink); max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .theme-toggle { display: flex; align-items: center; gap: 8px; background: transparent; border: 1px solid var(--surface-border); color: var(--ink); padding: 5px; border-radius: 999px; cursor: pointer; }
 .theme-toggle__track { position: relative; width: 42px; height: 24px; border-radius: 999px; background: var(--bg-alt); transition: background-color .25s ease; }

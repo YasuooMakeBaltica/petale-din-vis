@@ -34,9 +34,14 @@
       <div class="site-menu__group site-menu__group--actions">
         <p class="site-menu__eyebrow">Cont</p>
         <div class="site-menu__actions">
+          <div class="account-chip" id="accountChip" hidden>
+            <img class="account-chip__avatar" id="accountAvatar" src="" alt="" referrerpolicy="no-referrer" />
+            <span class="account-chip__name" id="accountName"></span>
+          </div>
           <button class="login-btn" id="loginBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21a8 8 0 0 0-16 0" /><circle cx="12" cy="7" r="4" /></svg>
-            Log in
+            <svg class="icon-person" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21a8 8 0 0 0-16 0" /><circle cx="12" cy="7" r="4" /></svg>
+            <svg class="icon-logout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /><polyline points="16 17 21 12 16 7" /><line x1="21" y1="12" x2="9" y2="12" /></svg>
+            <span class="login-btn__label">Log in</span>
           </button>
           <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">
             <span class="theme-toggle__label">Mod întunecat</span>
