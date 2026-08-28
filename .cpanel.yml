@@ -5,6 +5,8 @@ deployment:
     - /bin/cp -R index.html "$DEPLOYPATH"
     - /bin/cp -R catalog.html "$DEPLOYPATH"
     - /bin/cp -R style.css "$DEPLOYPATH"
+    - /bin/cp -R script.js "$DEPLOYPATH"
+    - /bin/cp -R send-email.php "$DEPLOYPATH"
     - /bin/cp -R buchet-albastru.jpg "$DEPLOYPATH"
     - /bin/cp -R buchet-albastru-cutie.jpg "$DEPLOYPATH"
     - /bin/cp -R buchet-roz-cutie.jpg "$DEPLOYPATH"
