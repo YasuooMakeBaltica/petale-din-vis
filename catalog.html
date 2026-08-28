@@ -4,15 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Catalog — Petale din Vis</title>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme = stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="catalog-hero">
-      <nav class="nav">
-        <a class="brand" href="index.html">Petale din Vis</a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteMenu" aria-label="Deschide meniul">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="site-menu" id="siteMenu" aria-hidden="true">
+      <nav class="site-menu__links" aria-label="Meniu principal">
+        <a href="index.html">Acasă</a>
         <a href="index.html#momente">Pentru tine</a>
         <a href="catalog.html">Catalog</a>
         <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="site-menu__actions">
+        <button class="login-btn" id="loginBtn" type="button">Log in</button>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="theme-toggle__label">Mod întunecat</span>
+        </button>
+      </div>
+    </div>
+    <div class="login-modal" id="loginModal" aria-hidden="true">
+      <div class="login-modal__panel" role="dialog" aria-modal="true" aria-labelledby="loginModalTitle">
+        <h3 id="loginModalTitle">Autentificare</h3>
+        <p>Contul tău Petale din Vis va fi disponibil în curând. Revino puțin mai târziu.</p>
+        <button class="login-modal__close" id="loginModalClose" type="button">Am înțeles</button>
+      </div>
+    </div>
+
+    <header class="catalog-hero">
+      <nav class="nav">
+        <a class="brand" href="index.html">Petale din Vis</a>
       </nav>
       <div class="catalog-intro">
         <p class="eyebrow">CATALOGUL NOSTRU</p>
@@ -47,5 +79,6 @@
     </main>
 
     <footer>Petale din Vis <span>—</span> flori pentru momente care rămân</footer>
+    <script src="script.js"></script>
   </body>
 </html>
