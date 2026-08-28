@@ -80,6 +80,7 @@ var GOOGLE_CLIENT_ID = '1087975152740-btfk5kg2bd4bf8pvhumjedda9g5lu68v.apps.goog
   function openLogin() {
     if (!loginModal) return;
     if (googleNote) googleNote.textContent = '';
+    if (loginClose) loginClose.hidden = true;
     loginModal.classList.add('is-open');
     loginModal.setAttribute('aria-hidden', 'false');
   }
@@ -187,7 +188,7 @@ var GOOGLE_CLIENT_ID = '1087975152740-btfk5kg2bd4bf8pvhumjedda9g5lu68v.apps.goog
       setStoredAccount(account);
       renderAccount(account);
       if (googleNote) googleNote.textContent = 'Bine ai venit, ' + (payload.name || payload.email) + '!';
-      setTimeout(closeLogin, 1200);
+      if (loginClose) loginClose.hidden = false;
     } catch (e) {
       if (googleNote) googleNote.textContent = 'Autentificarea Google a eșuat. Încearcă din nou.';
     }
