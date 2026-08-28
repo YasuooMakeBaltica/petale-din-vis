@@ -1,7 +1,7 @@
 // To enable real Google sign-in: create an OAuth Client ID in Google Cloud
 // Console (APIs & Services > Credentials), add this site's URL under
 // "Authorized JavaScript origins", then paste the Client ID below.
-var GOOGLE_CLIENT_ID = '';
+var GOOGLE_CLIENT_ID = '1087975152740-btfk5kg2bd4bf8pvhumjedda9g5lu68v.apps.googleusercontent.com';
 
 (function () {
   var toggleBtn = document.getElementById('menuToggle');
@@ -144,7 +144,14 @@ var GOOGLE_CLIENT_ID = '';
           client_id: GOOGLE_CLIENT_ID,
           callback: handleGoogleCredential
         });
-        window.google.accounts.id.prompt();
+        window.google.accounts.id.prompt(function (notification) {
+          if (!googleNote) return;
+          if (notification.isNotDisplayed && notification.isNotDisplayed()) {
+            googleNote.textContent = 'Google nu a afișat fereastra de autentificare (verifică originile autorizate sau dacă ești deja conectat). Cod: ' + notification.getNotDisplayedReason();
+          } else if (notification.isSkippedMoment && notification.isSkippedMoment()) {
+            googleNote.textContent = '';
+          }
+        });
       }, function () {
         if (googleNote) googleNote.textContent = 'Nu am putut contacta Google. Verifică conexiunea.';
       });
