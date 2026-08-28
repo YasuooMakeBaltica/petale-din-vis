@@ -80,7 +80,7 @@ h1 em { color: var(--rose); }
 .process-number { font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.6rem, 5vw, 4.4rem); color: var(--sage); }
 .process-copy h2 { font-size: clamp(2.5rem, 4vw, 4.2rem); margin: 15px 0 24px; }
 .process-copy p { line-height: 1.8; max-width: 560px; }
-.contact { background: var(--contact-bg); color: var(--contact-text); padding: 100px 12vw; display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: start; transition: background-color .25s ease, color .25s ease; }
+.contact { background: var(--contact-bg); color: var(--contact-text); padding: 100px 12vw; display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; transition: background-color .25s ease, color .25s ease; }
 .contact .eyebrow { color: #dce1d4; }
 .contact h2 { font-size: clamp(3.2rem, 5vw, 5.8rem); margin: 18px 0 0; }
 .contact h2 em { color: #f1c6bd; }
