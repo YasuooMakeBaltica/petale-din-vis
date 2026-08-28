@@ -150,48 +150,4 @@ var GOOGLE_CLIENT_ID = '';
       });
     });
   }
-
-  var contactForm = document.getElementById('contactForm');
-  var contactSubmit = document.getElementById('contactFormSubmit');
-  var contactStatus = document.getElementById('contactFormStatus');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (contactStatus) {
-        contactStatus.textContent = '';
-        contactStatus.classList.remove('is-success', 'is-error');
-      }
-      if (contactSubmit) contactSubmit.disabled = true;
-
-      fetch('send-email.php', {
-        method: 'POST',
-        body: new FormData(contactForm)
-      })
-        .then(function (res) { return res.json().catch(function () { return { success: false, error: 'Răspuns neașteptat de la server.' }; }); })
-        .then(function (data) {
-          if (data.success) {
-            if (contactStatus) {
-              contactStatus.textContent = 'Mulțumim! Mesajul tău a fost trimis.';
-              contactStatus.classList.add('is-success');
-            }
-            contactForm.reset();
-          } else {
-            if (contactStatus) {
-              contactStatus.textContent = data.error || 'Ceva nu a mers bine. Încearcă din nou.';
-              contactStatus.classList.add('is-error');
-            }
-          }
-        })
-        .catch(function () {
-          if (contactStatus) {
-            contactStatus.textContent = 'Nu am putut trimite mesajul. Verifică conexiunea și încearcă din nou.';
-            contactStatus.classList.add('is-error');
-          }
-        })
-        .finally(function () {
-          if (contactSubmit) contactSubmit.disabled = false;
-        });
-    });
-  }
 })();

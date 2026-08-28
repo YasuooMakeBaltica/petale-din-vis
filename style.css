@@ -84,24 +84,10 @@ h1 em { color: var(--rose); }
 .contact .eyebrow { color: #dce1d4; }
 .contact h2 { font-size: clamp(3.2rem, 5vw, 5.8rem); margin: 18px 0 0; }
 .contact h2 em { color: #f1c6bd; }
-.contact-right { display: flex; flex-direction: column; gap: 36px; }
 .contact-details { border-top: 1px solid rgba(255,255,255,.45); }
 .contact-details div { display: flex; flex-direction: column; gap: 8px; padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,.45); }
 .contact-details span { font-size: .7rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: #dce1d4; }
 .contact-details strong { font-family: Georgia, "Times New Roman", serif; font-size: 1.35rem; font-weight: normal; }
-
-.contact-form { display: flex; flex-direction: column; gap: 16px; }
-.form-field { display: flex; flex-direction: column; gap: 6px; }
-.form-field label { font-size: .7rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: #dce1d4; }
-.form-field input, .form-field textarea { font-family: inherit; font-size: .95rem; color: var(--contact-text); background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.45); border-radius: 4px; padding: 11px 13px; resize: vertical; }
-.form-field input::placeholder, .form-field textarea::placeholder { color: rgba(255,255,255,.5); }
-.form-field input:focus, .form-field textarea:focus { outline: none; border-color: var(--rose); background: rgba(255,255,255,.14); }
-.form-field--hp { position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
-.contact-form__submit { align-self: flex-start; margin-top: 4px; }
-.contact-form__submit[disabled] { opacity: .6; cursor: default; }
-.contact-form__status { margin: 0; font-size: .85rem; min-height: 1.2em; }
-.contact-form__status.is-success { color: #d9f2c8; }
-.contact-form__status.is-error { color: #ffcfc4; }
 footer { background: var(--footer-bg); color: var(--footer-text); padding: 30px 7vw; text-align: center; font-family: Georgia, "Times New Roman", serif; font-size: 1.15rem; transition: background-color .25s ease, color .25s ease; }
 footer span { color: var(--rose); padding: 0 .4rem; }
 .catalog-hero { background: var(--bg-alt); padding: 28px 7vw 90px; }
@@ -190,7 +176,6 @@ footer span { color: var(--rose); padding: 0 .4rem; }
   .gallery-heading .eyebrow::before, .gallery-heading .eyebrow::after { width: 20px; }
   .gallery-grid { grid-template-columns: 1fr; margin-top: 36px; }
   .contact { gap: 40px; }
-  .contact-right { gap: 28px; }
   .moments { padding: 60px 8vw; }
   .moments-intro { margin-bottom: 40px; }
   .moment-list { grid-template-columns: 1fr; gap: 28px; }
