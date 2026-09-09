@@ -14,3 +14,7 @@ deployment:
     - /bin/cp -R cutie-rosie.jpg "$DEPLOYPATH"
     - /bin/cp -R buchet-roz-rosu.jpg "$DEPLOYPATH"
     - /bin/cp -R coroana-funerara.jpg "$DEPLOYPATH"
+    - /bin/cp -R trandafir-tricolor.jpg "$DEPLOYPATH"
+    - /bin/cp -R bujor-bleu.jpg "$DEPLOYPATH"
+    - /bin/cp -R trandafir-mov.jpg "$DEPLOYPATH"
+    - /bin/cp -R bujor-roz.jpg "$DEPLOYPATH"
