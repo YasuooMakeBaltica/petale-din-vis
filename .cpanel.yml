@@ -4,6 +4,8 @@ deployment:
     - export DEPLOYPATH=/home/$USER/public_html/
     - /bin/cp -R index.html "$DEPLOYPATH"
     - /bin/cp -R catalog.html "$DEPLOYPATH"
+    - /bin/cp -R termeni.html "$DEPLOYPATH"
+    - /bin/cp -R confidentialitate.html "$DEPLOYPATH"
     - /bin/cp -R style.css "$DEPLOYPATH"
     - /bin/cp -R script.js "$DEPLOYPATH"
     - /bin/cp -R send-email.php "$DEPLOYPATH"
