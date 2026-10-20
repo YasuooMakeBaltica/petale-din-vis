@@ -1,0 +1,7 @@
+# Vercel serves the repo as static files and does not run PHP, so anything
+# listed here would otherwise be downloadable as plain source.
+.github
+.cpanel.yml
+send-email.php
+config.example.php
+README.md
